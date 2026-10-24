@@ -1,11 +1,14 @@
 # Rohaan Realty Website
 
-Website source and deployment files for https://rohaanrealty.com.
+Website repository for https://rohaanrealty.com.
 
 ## Current office address
 SCO 528, Above Central Bank, Sector 70, Mohali, Punjab.
 
-## Deployment
-The live Netlify site currently uses a manual deploy. To enable continuous deployment, connect this repository in the Netlify project settings after the full source project has been committed.
+## Files in this repository
+- `snapshot/index_rohaan.html` — captured homepage HTML with the updated office address.
 
-> Note: this repository is being initialized. A saved HTML snapshot alone is not the full Next.js application source and its assets, so it must not be treated as a production-ready replacement for the current deployment.
+## Important deployment note
+The live Netlify site was originally published as a manual deploy. This repository currently contains only a homepage snapshot, not the complete Next.js source project or its bundled assets and routes. Do not connect this repository to the production Netlify site yet: doing so could replace the working website with an incomplete deployment.
+
+To enable safe continuous deployment, add the complete original website source project (including `package.json`, application source, public assets, and Netlify build configuration if applicable), then link this repository in Netlify.
