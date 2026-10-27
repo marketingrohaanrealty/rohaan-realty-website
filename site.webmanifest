@@ -1,0 +1,15 @@
+{
+  "name": "Rohaan Realty",
+  "short_name": "Rohaan Realty",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#064e3b",
+  "icons": [
+    {
+      "src": "/logo.jpg",
+      "sizes": "160x160",
+      "type": "image/jpeg"
+    }
+  ]
+}
