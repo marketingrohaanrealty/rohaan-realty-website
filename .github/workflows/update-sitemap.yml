@@ -4,10 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "index.html"
-      - "about.html"
-      - "contact.html"
-      - "privacy-policy.html"
+      - "*.html"
       - "scripts/update-sitemap.mjs"
       - ".github/workflows/update-sitemap.yml"
   workflow_dispatch:
