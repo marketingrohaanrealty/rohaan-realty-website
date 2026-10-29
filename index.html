@@ -65,6 +65,10 @@
       "name": "Chandigarh"
     },
     {
+      "@type": "Place",
+      "name": "New Chandigarh"
+    },
+    {
       "@type": "City",
       "name": "Mohali"
     },
@@ -582,6 +586,48 @@
   .kicker{padding:7px 10px;font-size:10.5px;letter-spacing:.12em}
 }
 
+  
+/* Location section responsive fix: prevent sticky nav overlap, compact title, and keep map/text balanced */
+#office-location,#office-map,#expertise,#approach,#areas{scroll-margin-top:108px}
+.location{grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);align-items:stretch;overflow:hidden}
+.location-copy{min-width:0;gap:48px;padding:clamp(58px,5.7vw,92px) clamp(24px,4.3vw,68px)}
+.location-copy>div:first-child{max-width:720px}
+.location-copy .display{
+  font-size:clamp(36px,3.45vw,54px);line-height:1.04;letter-spacing:-.055em;
+  max-width:17ch;text-wrap:balance;overflow-wrap:normal;
+}
+.location-copy .display strong{display:inline}
+.location-copy .lead{font-size:clamp(15px,1.12vw,17px);line-height:1.75;max-width:42rem;margin-top:24px}
+.locations{gap:9px;margin-top:28px}
+.pill{padding:10px 13px;font-size:10px;letter-spacing:.11em;white-space:nowrap}
+.coordinates{max-width:100%;font-size:10.5px;line-height:1.85;letter-spacing:.09em;overflow-wrap:anywhere}
+.office-map{min-width:0;min-height:620px;align-self:stretch}
+.office-map iframe{display:block}
+@media(max-width:1100px) and (min-width:981px){
+ .location-copy{padding-left:36px;padding-right:36px}
+ .location-copy .display{font-size:clamp(35px,3.5vw,44px)}
+ .coordinates{font-size:9.5px}
+ .pill{padding:9px 10px;font-size:9px}
+}
+@media(max-width:980px){
+ #office-location{scroll-margin-top:88px}
+ .location{grid-template-columns:minmax(0,1fr)}
+ .location-copy{min-height:0;padding:76px 24px 54px;gap:34px}
+ .location-copy .display{font-size:clamp(38px,6.6vw,54px);max-width:18ch}
+ .location-copy .lead{font-size:16px}
+ .office-map{min-height:460px}
+ .coordinates{font-size:10.5px}
+}
+@media(max-width:620px){
+ .location-copy{padding:62px 20px 42px;gap:28px}
+ .location-copy .display{font-size:clamp(34px,9vw,44px);line-height:1.06;max-width:17ch}
+ .location-copy .lead{font-size:14.5px;line-height:1.72;margin-top:18px}
+ .locations{margin-top:22px;gap:8px}
+ .pill{font-size:9px;letter-spacing:.09em;padding:9px 10px}
+ .coordinates{font-size:9.5px;letter-spacing:.075em}
+ .office-map{min-height:420px}
+}
+
   </style>
 </head>
 <body>
@@ -741,8 +787,8 @@
         <div>
           <div class="kicker reveal">Our Office</div>
           <h2 class="display reveal" style="margin-top:24px">Visit Rohaan Realty.<br><strong style="color:var(--sand)">Sector 70, Mohali.</strong></h2>
-          <p class="lead reveal reveal-delay-1" style="color:rgba(255,255,255,.6)">Meet our advisory team for residential and commercial real estate guidance across Chandigarh, Mohali and Panchkula.</p>
-          <div class="locations reveal reveal-delay-2"><span class="pill">Chandigarh</span><span class="pill">Mohali</span><span class="pill">Panchkula</span></div>
+          <p class="lead reveal reveal-delay-1" style="color:rgba(255,255,255,.6)">Meet our advisory team for residential and commercial real estate guidance across Chandigarh, New Chandigarh, Mohali and Panchkula.</p>
+          <div class="locations reveal reveal-delay-2" aria-label="Areas we serve"><span class="pill">Chandigarh</span><span class="pill">New Chandigarh</span><span class="pill">Mohali</span><span class="pill">Panchkula</span></div>
         </div>
         <div class="coordinates reveal">SCO 528, Above Central Bank, Sector 70, Mohali, Punjab</div>
       </div>
