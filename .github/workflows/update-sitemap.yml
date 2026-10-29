@@ -1,0 +1,42 @@
+name: Keep sitemap in sync
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "about.html"
+      - "contact.html"
+      - "privacy-policy.html"
+      - "scripts/update-sitemap.mjs"
+      - ".github/workflows/update-sitemap.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Regenerate sitemap from canonical pages
+        run: node scripts/update-sitemap.mjs
+      - name: Commit sitemap changes if needed
+        run: |
+          if git diff --quiet -- sitemap.xml; then
+            echo "Sitemap is already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          git commit -m "chore(seo): refresh sitemap lastmod dates"
+          git push
