@@ -1004,7 +1004,7 @@ section[id],[id].contact-map-section{scroll-margin-top:104px}
             <input type="checkbox" required style="margin-top:3px;accent-color:#151612">
             <span>I agree to the <a href="privacy-policy.html" style="text-decoration:underline">Privacy Policy</a> and consent to Rohaan Realty contacting me about my property enquiry by phone, WhatsApp, SMS or email.</span>
           </label>
-          <button class="btn submit" type="submit">Preview WhatsApp draft <span class="arrow">→</span></button>
+          <button class="btn submit" type="submit">Continue on WhatsApp <span class="arrow">→</span></button>
           <div id="formNote" style="font-size:12px;color:#5d584f;min-height:18px"></div>
         </form>
       </div>
@@ -1148,8 +1148,8 @@ section[id],[id].contact-map-section{scroll-margin-top:104px}
         'Source: rohaanrealty.com'
       ].join('\n');
       const note = document.getElementById('formNote');
-      note.style.whiteSpace = 'pre-line';
-      note.textContent = 'WhatsApp draft preview\n'.trim() + '\n\n' + message;
+      note.textContent = 'Opening WhatsApp with your enquiry...';
+      window.location.href = 'https://wa.me/919646802555?text=' + encodeURIComponent(message);
     });
   </script>
 
