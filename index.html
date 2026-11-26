@@ -758,7 +758,17 @@ section[id],[id].contact-map-section{scroll-margin-top:104px}
 }
 
   </style>
-</head>
+<style>
+.hero#home{height:76svh;min-height:540px}
+.property-picker{background:#faf7f1;color:#24231e;padding:clamp(32px,5vw,80px) 6vw}
+.property-picker h2{font:normal clamp(2rem,4vw,4rem)/1.1 Georgia,serif;margin:0 0 24px}
+.property-picker>div{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.property-picker a{position:relative;overflow:hidden;background:#494c40;color:white;display:flex;align-items:end;min-height:210px;text-decoration:none}
+.property-picker img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.property-picker span{position:relative;width:100%;padding:42px 18px 18px;background:linear-gradient(transparent,#111c);font:normal 1.55rem Georgia,serif}
+#consultation{scroll-margin-top:90px}#consultation summary{padding:12px 0;cursor:pointer}#consultation details .field{margin-top:12px}
+@media(max-width:640px){.hero#home{height:auto;min-height:520px}.property-picker>div{grid-template-columns:1fr}.property-picker a{min-height:118px}.hero .scroll-cue{display:none}}
+</style></head>
 <body>
   <div class="grain"></div>
   <nav class="nav" id="nav">
@@ -780,19 +790,22 @@ section[id],[id].contact-map-section{scroll-margin-top:104px}
     <section class="hero" id="home">
       <div class="hero-bg" id="heroBg"></div>
       <div class="hero-content">
-        <div class="eyebrow reveal">Real Estate Advisory · Chandigarh · Mohali · Panchkula</div>
-        <div id="heroTitle"><h1><span class="hero-line"><span>Tricity Real Estate.</span></span><span class="hero-line"><span><span class="accent">Strategically</span> Done.</span></span></h1></div>
+        <div class="eyebrow reveal">Rohaan Realty · Property Advisory</div>
+        <div id="heroTitle"><h1><span class="hero-line"><span>Find Your Property</span></span><span class="hero-line"><span>in <span class="accent">Tricity.</span></span></span></h1></div>
         <div class="hero-bottom reveal reveal-delay-2">
-          <p class="hero-copy">Personalized property advisory for apartments, plots, villas, commercial spaces and premium real estate projects across Chandigarh, New Chandigarh, Mohali and Panchkula.</p>
+          <p class="hero-copy">Chandigarh · New Chandigarh · Mohali · Panchkula</p>
           <div class="hero-actions">
-            <a href="contact.html" class="btn btn-primary">Talk to an Advisor <span class="arrow">→</span></a>
-            <a href="#expertise" class="btn btn-ghost">Explore Our Expertise</a>
+            <a href="#consultation" class="btn btn-primary">Talk to an Advisor <span class="arrow">→</span></a>
+            <a href="#areas" class="btn btn-ghost">Explore Areas</a>
           </div>
         </div>
       </div>
       <div class="scroll-cue">Scroll</div>
     </section>
 
+    <section class="property-picker"><h2>What are you looking for?</h2><div><a href="#consultation" data-property="Residential Plots"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=760&q=80" alt="" loading="lazy"><span>Residential Plots</span></a>
+<a href="#consultation" data-property="Apartments & Villas"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=760&q=80" alt="" loading="lazy"><span>Apartments & Villas</span></a>
+<a href="#consultation" data-property="Commercial Spaces"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=760&q=80" alt="" loading="lazy"><span>Commercial Spaces</span></a></div></section>
     <section class="section intro">
       <div class="section-head">
         <div class="kicker reveal">Introduction</div>
@@ -982,12 +995,12 @@ section[id],[id].contact-map-section{scroll-margin-top:104px}
         <form id="leadForm">
           <div class="field"><label for="name">Name</label><input id="name" required placeholder="Your full name" /></div>
           <div class="field"><label for="phone">Phone Number</label><input id="phone" required placeholder="+91" inputmode="tel" /></div>
-          <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@example.com" /></div>
-          <div class="field"><label>I am interested in</label><div class="choice-row"><button type="button" class="choice active">Commercial</button><button type="button" class="choice">Residential</button><button type="button" class="choice">Plots / Villas</button></div></div>
-          <div class="field"><label for="leadLocation">Preferred Location</label><input id="leadLocation" placeholder="Chandigarh, Mohali, Panchkula..." /></div>
+          <details id="propertyDetails"><summary>Add property details</summary><div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@example.com" /></div>
+          <div class="field"><label>I am interested in</label><div class="choice-row"><button type="button" class="choice">Commercial Spaces</button><button type="button" class="choice">Apartments &amp; Villas</button><button type="button" class="choice">Residential Plots</button></div></div>
+          <div class="field"><label for="leadLocation">Preferred Location</label><input id="leadLocation" placeholder="Chandigarh, New Chandigarh, Mohali, Panchkula..." /></div>
           <div class="field"><label for="leadBudget">Budget</label><input id="leadBudget" placeholder="Your approximate budget" /></div>
           <div class="field"><label for="message">Message</label><textarea id="message" placeholder="Tell us what you're looking for..."></textarea></div>
-          <label class="privacy-consent" style="display:flex;gap:10px;align-items:flex-start;font-size:12px;line-height:1.55;color:#5d584f">
+          </details><label class="privacy-consent" style="display:flex;gap:10px;align-items:flex-start;font-size:12px;line-height:1.55;color:#5d584f">
             <input type="checkbox" required style="margin-top:3px;accent-color:#151612">
             <span>I agree to the <a href="privacy-policy.html" style="text-decoration:underline">Privacy Policy</a> and consent to Rohaan Realty contacting me about my property enquiry by phone, WhatsApp, SMS or email.</span>
           </label>
@@ -1109,6 +1122,13 @@ section[id],[id].contact-map-section{scroll-margin-top:104px}
       });
     });
 
+    document.querySelectorAll('[data-property]').forEach(card => {
+      card.addEventListener('click', () => {
+        document.getElementById('propertyDetails').open = true;
+        const choice = Array.from(document.querySelectorAll('.choice')).find(button => button.textContent === card.dataset.property);
+        if (choice) choice.click();
+      });
+    });
     document.getElementById('leadForm').addEventListener('submit', (e) => {
       e.preventDefault();
       const form = e.currentTarget;
